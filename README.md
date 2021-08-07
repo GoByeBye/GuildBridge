@@ -61,7 +61,7 @@ Need support? Hit me up on guilded
 
 <!--- Badges code --->
 
-[optimized-badge]: https://i.imgur.com/9uJQSSf.png
+[optimized-badge]: https://i.imgur.com/lmiLNGi.png
 
 [support]: https://www.guilded.gg/i/jpLJ5xJ2?cid=cf3578de-2ccd-4302-af58-d5cbdd709b6e&intent=chat
 [support-badge]: https://i.imgur.com/17tyFkX.png
