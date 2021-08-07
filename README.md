@@ -47,11 +47,13 @@ A properly formatted .env file would look something along the lines of this
     <strong>How to find guilded channel ID</strong>
 </summary>
     Right click on the channel and select copy link
-    ![](https://github.com/GoByeBye/GuildBridge/blob/master/assets/copylink.gif)
+![copylink](https://raw.githubusercontent.com/GoByeBye/GuildBridge/master/assets/copylink.gif)
     
     
 <strong>Example</strong>
+
 `https://www.guilded.gg/Disco-Support/groups/WD5nXJEd/channels/cf3578de-2ccd-4302-af58-d5cbdd709b6e/chat`
+
 Becomes 
 `cf3578de-2ccd-4302-af58-d5cbdd709b6e`
 </details>
@@ -70,11 +72,6 @@ Need support? Hit me up on guilded
 
 [![support-badge]][support]
 
-
-
-
-<!-- Previews --->
-[copylink]: https://github.com/GoByeBye/GuildBridge/assets/copylink.gif
 
 <!--- Badges code --->
 
