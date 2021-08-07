@@ -47,7 +47,7 @@ A properly formatted .env file would look something along the lines of this
     <strong>How to find guilded channel ID</strong>
 </summary>
     Right click on the channel and select copy link
-    ![](https://github.com/GoByeBye/GuildBridge/assets/copylink.gif)
+    ![](https://github.com/GoByeBye/GuildBridge/blob/master/assets/copylink.gif)
     
     
 <strong>Example</strong>
