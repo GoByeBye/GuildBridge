@@ -42,6 +42,19 @@ A properly formatted .env file would look something along the lines of this
     GUILDED_WEBHOOK=https://media.guilded.gg/webhooks/4843c505-6ca0-4b34-ba68-d6d2d403ddcb/8QlHz3sJ562C2kEY4amQw4Oywai0CS0scKqYkgEoY4UA0IcK8G4YskAgmc0O0EqgooMac0IQOUE2a2g8AyMmYa
     GUILDED_CHANNEL=cf3578de-2ccd-4302-af58-d5cbdd709b6e
 
+<details>
+<summary>
+    <strong>How to find guilded channel ID</strong>
+</summary>
+    Right click on the channel and select copy link
+    ![](https://github.com/GoByeBye/GuildBridge/assets/copylink.gif)
+    
+    
+<strong>Example</strong>
+`https://www.guilded.gg/Disco-Support/groups/WD5nXJEd/channels/cf3578de-2ccd-4302-af58-d5cbdd709b6e/chat`
+Becomes 
+`cf3578de-2ccd-4302-af58-d5cbdd709b6e`
+</details>
 
 ## Start the bot
 Windows
@@ -59,6 +72,9 @@ Need support? Hit me up on guilded
 
 
 
+
+<!-- Previews --->
+[copylink]: https://github.com/GoByeBye/GuildBridge/assets/copylink.gif
 
 <!--- Badges code --->
 
