@@ -33,6 +33,7 @@ async def on_message(ctx):
         return
         
     displayname = ctx.author.name
+    cleaned = ctx.content
 
     try:
         if ctx.author.nick:
@@ -60,17 +61,31 @@ async def on_message(ctx):
     # becomes
     # Hi John Doe how are you?
     # where is the name of the user mentioned
+    with open("data/users.json", "r") as f:
+            users = json.load(f)
+            users = users["users"]
+
     for mention in ctx.mentions:
-        cleanName = "***" + mention.name + "*** "
-        # Find all mentions in ctx.content using a regex 
-        mentionList = re.findall(f'<@!?{mention.id}>', ctx.content)
-        # mentionList will return somehting alone the lines of ["<@8546546546465>", "<@5464654654>"]
-        # Iterate through the list and replace the mention with the clean name
-        for mention in mentionList:
-            ctx.content = ctx.content.replace(mention, cleanName)
+        discordID = mention.id
+        logging.info(cleaned)
+        for user in users:
+            if user["discordID"] == discordID:
+                newMention = f"<@{user['guildedID']}>"
+                oldMention = f"<@!{str(user['discordID'])}>"
+                
+                # For some god awful reason if you try to directly edit ctx.context it just doesn't wanna do it
+                # So we have to make the message into it's own new variable then edit it
+                # This is a terrible way to do this but I don't care
+                cleaned = cleaned.replace(oldMention, newMention)
+                logging.info(cleaned)
+                
+        
+        # Replace remaining mentions 
+        newMention = f"***{mention.name}***"
+        oldMention = f"<@!{str(mention.id)}>"
+        cleaned = cleaned.replace(oldMention, newMention)
 
-
-    webhook = DiscordWebhook(url=os.getenv('GUILDED_WEBHOOK'), content=f"**<{displayname}>** {ctx.content}") 
+    webhook = DiscordWebhook(url=os.getenv('GUILDED_WEBHOOK'), content=f"**<{displayname}>** {cleaned}") 
     logging.debug(ctx.content)
     attachment_urls = []
 
