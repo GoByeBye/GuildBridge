@@ -31,8 +31,6 @@ async def on_message(ctx):
     if ctx.author.avatar_url == None:
         logging.info("Ignoring message | No avatar URL")
         return # Ignore messages without an avatar
-
-    
     cleanedeveryone = ctx.content.replace('@everyone', '@​everyone')
     cleanedhere = cleanedeveryone.replace('@here', '@​here')
     webhook = DiscordWebhook(url=os.getenv('DISCORD_WEBHOOK'), content=cleanedhere, username=ctx.author.name, avatar_url=ctx.author.avatar_url)
