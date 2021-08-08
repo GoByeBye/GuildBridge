@@ -26,7 +26,9 @@ async def on_message(ctx):
         return
     if str(ctx.channel.id) != os.getenv('DISCORD_CHANNEL_ID'):
         return
-
+    if ctx.author.id == bot.user.id:
+        return
+        
     displayname = ctx.author.name
 
     try:
