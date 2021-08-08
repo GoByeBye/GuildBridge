@@ -4,3 +4,4 @@ discord-webhook
 python-dotenv
 webhooks
 coloredlogs
+websockets
