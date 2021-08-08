@@ -8,6 +8,9 @@ from dotenv import load_dotenv
 from discord_webhook import DiscordWebhook, DiscordEmbed
 # import urllib.request
 import re
+import random
+import string
+import json
 
 load_dotenv()
 
@@ -86,4 +89,51 @@ async def on_message(ctx):
     logging.info("Sent webhook")
     logging.debug(response)
 
+
+
+    def write_json(data, filename="data/auth.json"):
+        with open(filename, "w") as f:
+            json.dump(data, f, indent=4)
+
+
+    # Process the command
+    if ctx.content.startswith("bridge"):
+        # Split the message into args (seperated by space)
+        args = ctx.content.split(" ")
+        # Remove the prefix from the args list
+        args.pop(0)
+
+        if args[0] == "link":
+            with open("data/auth.json", "r") as f:
+                auth = json.load(f)
+                temp = auth["discord"]
+
+            
+            # Check if discordID is already in data/auth.json
+            for id in temp:
+                if id["discordID"] == int(ctx.author.id):
+                    await ctx.channel.send("You are already linked to a user.")
+                    return
+
+            # Generate a 16 letter code
+            code = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(16))
+            # Send the code to the user in dms
+            await ctx.author.send(f"Your code is: **{code}**")
+            # Save the code to data/auth.json along with the user ID
+            # Example
+            # { "DiscordID": 1234567890, code: "abcdef" }
+            # where dID is the discord ID of the user and code is the code generated
+           
+
+            discordID = ctx.author.id
+            y = {"discordID" : int(discordID), "code" : str(code)}
+            logging.debug(y)
+            temp.append(y)
+
+            write_json(auth)
+
+
 bot.run(os.getenv('DISCORD_TOKEN'))
+
+
+
