@@ -134,7 +134,7 @@ async def on_message(ctx):
                 await ctx.channel.send("Sucessfully linked accounts")
 
             else:
-                await ctx.channel.send("Start linking process from discord for now")
+                await ctx.channel.send("Start linking process from discord. This is so that you don't leak your linking code")
                             
 
             
