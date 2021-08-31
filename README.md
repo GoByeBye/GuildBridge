@@ -6,6 +6,9 @@ GuildBridge is a fork of [guilded-bridge by burritosoftware](https://github.com/
 
 GuildBridge is simply bridging the gap between Discord and Guilded guilds.
 
+# Demo
+![demo]
+![demo-image]
 # Installing
 ```bash
 pip install -r requirements.txt
@@ -76,7 +79,8 @@ Need support? Hit me up on guilded
 
 
 <!--- Badges code --->
-
+[demo]: https://github.com/GoByeBye/GuildBridge/blob/master/assets/link_example.gif
+[demo-image]: https://vrc.gay/%E2%81%A0%E2%81%A0%E2%81%A0%E2%80%8D%E2%80%8D%E2%80%8B%E2%80%8C%E2%80%8B%E2%81%A0%E2%80%8B%E2%80%8C%E2%80%8B/direct
 [optimized-badge]: https://i.imgur.com/lmiLNGi.png
 
 [support]: https://www.guilded.gg/i/jpLJ5xJ2?cid=cf3578de-2ccd-4302-af58-d5cbdd709b6e&intent=chat
